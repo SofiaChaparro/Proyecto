@@ -14,16 +14,19 @@ String recordLabel;
 public String getName() {
 	return name;
 }
+
 public AlbunesM(String name, String cover, String description, LocalDate releaseDate, String genre,
 		String recordLabel) {
-	super();
-	this.name = "";
-	this.cover = "";
-	this.description = "";
+	
+	this.name = name;
+	this.cover = cover;
+	this.description = description;
 	this.releaseDate = releaseDate;
-	this.genre = "";
-	this.recordLabel = "";
+	this.genre = genre;
+	this.recordLabel = recordLabel;
 }
+
+
 public void setName(String name) {
 	this.name = name;
 }
@@ -56,6 +59,11 @@ public String getRecordLabel() {
 }
 public void setRecordLabel(String recordLabel) {
 	this.recordLabel = recordLabel;
+}
+@Override
+public String toString() {
+	return "AlbunesM [name=" + name + ", cover=" + cover + ", description=" + description + ", releaseDate="
+			+ releaseDate + ", genre=" + genre + ", recordLabel=" + recordLabel + "]";
 }
 
 }
