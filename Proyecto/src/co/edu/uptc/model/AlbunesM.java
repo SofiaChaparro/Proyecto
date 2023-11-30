@@ -14,6 +14,16 @@ String recordLabel;
 public String getName() {
 	return name;
 }
+public AlbunesM(String name, String cover, String description, LocalDate releaseDate, String genre,
+		String recordLabel) {
+	super();
+	this.name = "";
+	this.cover = "";
+	this.description = "";
+	this.releaseDate = releaseDate;
+	this.genre = "";
+	this.recordLabel = "";
+}
 public void setName(String name) {
 	this.name = name;
 }
