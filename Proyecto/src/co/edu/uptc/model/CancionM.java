@@ -1,5 +1,5 @@
 package co.edu.uptc.model;
 
-public class CancionesM {
+public class CancionM {
 
 }

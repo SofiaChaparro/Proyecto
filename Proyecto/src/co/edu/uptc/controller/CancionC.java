@@ -1,5 +1,5 @@
 package co.edu.uptc.controller;
 
-public class PremiosC {
+public class CancionC {
 
 }
