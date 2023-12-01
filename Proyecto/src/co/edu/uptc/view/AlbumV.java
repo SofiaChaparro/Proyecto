@@ -28,6 +28,11 @@ public class AlbumV {
 
 	}
 
+	public void IndiceAlbum() {
+		System.out.println("Ingrese indice");
+		album.BorrarAlbum(pat.nextInt());
+		
+	}
 
 
 
