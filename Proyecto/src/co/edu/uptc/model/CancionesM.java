@@ -2,10 +2,10 @@ package co.edu.uptc.model;
 
 public class CancionesM {
 
-    public String name;
-    public String description;
-    public String duration;
-    
+    private String name;
+    private String description;
+    private String duration;
+
     ArrayList<Canciones> arrayCanciones = new ArrayList<Canciones>();
 
 
