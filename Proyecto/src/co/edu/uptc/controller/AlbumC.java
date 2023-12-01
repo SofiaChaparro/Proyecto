@@ -15,8 +15,10 @@ static ArrayList<Object> albunes = new ArrayList<Object>(5);
 		albunes.add(nuevoAlbum);
 	}
 
-	public static void BorrarAlbum() {
-
+	public static void BorrarAlbum(int indice) {
+for ( indice=0;indice <albunes.size();indice++) {
+	albunes.remove(indice);
+}
 	}
 
 	public static void EnlistarAlbum() {
