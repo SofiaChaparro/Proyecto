@@ -1,4 +1,4 @@
-package co.edu.uptc.controller;
+package src.co.edu.uptc.controller;
 
 import co.edu.uptc.model.ColeccionistaM;
 

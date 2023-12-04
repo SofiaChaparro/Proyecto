@@ -44,7 +44,7 @@ public class Premio {
     public void setOrganization(String organization) {
         this.organization = organization;
     }
-    
+
     public String toString() {
         return "Premio{" + "premiationDate=" + premiationDate + ", description=" + description + ", name=" + name + ", organization=" + organization + '}';
     }

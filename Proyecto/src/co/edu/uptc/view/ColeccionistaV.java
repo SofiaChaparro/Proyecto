@@ -1,10 +1,10 @@
-package co.edu.uptc.view;
+package src.co.edu.uptc.view;
 
-import java.util.Scanner;
-
-import co.edu.uptc.controller.ColeccionistaC;
+import src.co.edu.uptc.controller.ColeccionistaC;
 import co.edu.uptc.controller.ValidarDatosC;
 import co.edu.uptc.model.ColeccionistaM;
+
+import java.util.Scanner;
 
 public class ColeccionistaV {
 

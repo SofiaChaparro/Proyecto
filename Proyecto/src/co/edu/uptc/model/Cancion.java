@@ -1,33 +1,28 @@
-package co.edu.uptc.model;
+package src.co.edu.uptc.model;
 
 public class Cancion {
-    private String name;
-    private String duration;
 
-    public Cancion(String name, String duration) {
-        this.name = name;
-        this.duration = duration;
-    }
+        private String name;
+        private String duracion;
 
-    public String getName() {
-        return name;
-    }
+        public Cancion(String name, String duracion) {
+            this.name = name;
+            this.duracion = duracion;
+        }
 
-    public void setName(String name) {
-        this.name = name;
-    }
+        public String getName() {
+            return name;
+        }
 
-    public String getDuration() {
-        return duration;
-    }
+        public String getDuracion() {
+            return duracion;
+        }
 
-    public void setDuration(String duration) {
-        this.duration = duration;
-    }
+        public void setName(String name) {
+            this.name = name;
+        }
 
-   public String toString() {
-        return "Cancion{" + "name=" + name + ", duration=" + duration + '}';
-    }
-
-
+        public void setDuracion(String duracion) {
+            this.duracion = duracion;
+        }
 }

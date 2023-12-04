@@ -3,8 +3,8 @@ package co.edu.uptc.model;
 import java.util.ArrayList;
 
 public class Banda {
-	
-	public int performer;
+
+    public int performer;
     private String name;
     private String genero;
     private String creationDate;
@@ -12,6 +12,7 @@ public class Banda {
     private String image;
     private String description;
     ArrayList<Banda> arrayBanda = new ArrayList<Banda>();
+
     public Banda(String name, String genero, String creationDate, String birthDate, String image, String description) {
         this.name = name;
         this.genero = genero;
@@ -20,6 +21,7 @@ public class Banda {
         this.image = image;
         this.description = description;
     }
+
     public String getName() {
         return name;
     }
