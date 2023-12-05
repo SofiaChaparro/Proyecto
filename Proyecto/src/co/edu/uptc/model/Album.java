@@ -3,77 +3,88 @@ package co.edu.uptc.model;
 
 import java.util.ArrayList;
 
+
 public class Album {
-    String name;
-    String cover;
-    String description;
-    String releaseDate;
-    String genre;
-    String recordLabel;
-    public String getName() {
-        return name;
-    }
+	String name;
+	String cover;
+	String description;
+	String releaseDate;
+	String genre;
+	String recordLabel;
+	static ArrayList<Object> albunes = new ArrayList<Object>(5);
 
-    public Album(String name, String cover, String description, String releaseDate, String genre,
-                 String recordLabel) {
+	public String getName() {
+		return name;
+	}
 
-        this.name = name;
-        this.cover = cover;
-        this.description = description;
-        this.releaseDate = releaseDate;
-        this.genre = genre;
-        this.recordLabel = recordLabel;
-    }
+	public Album(String name, String cover, String description, String releaseDate, String genre,
+			String recordLabel) {
 
+		this.name = name;
+		this.cover = cover;
+		this.description = description;
+		this.releaseDate = releaseDate;
+		this.genre = genre;
+		this.recordLabel = recordLabel;
+		this.albunes = new ArrayList<>();
+	}
 
-    public void setName(String name) {
-        this.name = name;
-    }
+	public static ArrayList<Object> getAlbunes() {
+		return albunes;
+	}
 
-    public String getCover() {
-        return cover;
-    }
+	public static void setAlbunes(ArrayList<Object> albunes) {
+		Album.albunes = albunes;
+	}
 
-    public void setCover(String cover) {
-        this.cover = cover;
-    }
+	public void setName(String name) {
+		this.name = name;
+	}
 
-    public String getDescription() {
-        return description;
-    }
+	public String getCover() {
+		return cover;
+	}
 
-    public void setDescription(String description) {
-        this.description = description;
-    }
+	public void setCover(String cover) {
+		this.cover = cover;
+	}
 
-    public String getReleaseDate() {
-        return releaseDate;
-    }
+	public String getDescription() {
+		return description;
+	}
 
-    public void setReleaseDate(String releaseDate) {
-        this.releaseDate = releaseDate;
-    }
+	public void setDescription(String description) {
+		this.description = description;
+	}
 
-    public String getGenre() {
-        return genre;
-    }
+	public String getReleaseDate() {
+		return releaseDate;
+	}
 
-    public void setGenre(String genre) {
-        this.genre = genre;
-    }
+	public void setReleaseDate(String releaseDate) {
+		this.releaseDate = releaseDate;
+	}
 
-    public String getRecordLabel() {
-        return recordLabel;
-    }
+	public String getGenre() {
+		return genre;
+	}
 
-    public void setRecordLabel(String recordLabel) {
-        this.recordLabel = recordLabel;
-    }
+	public void setGenre(String genre) {
+		this.genre = genre;
+	}
 
-    @Override
-    public String toString() {
-        return "AlbunesM [name=" + name + ", cover=" + cover + ", description=" + description + ", releaseDate="
-                + releaseDate + ", genre=" + genre + ", recordLabel=" + recordLabel + "]";
-    }
+	public String getRecordLabel() {
+		return recordLabel;
+	}
+
+	public void setRecordLabel(String recordLabel) {
+		this.recordLabel = recordLabel;
+	}
+
+	@Override
+	public String toString() {
+		return "AlbunesM [name:" + name + ", cover:" + cover + ", description:" + description + ", releaseDate:"
+				+ releaseDate + ", genre:" + genre + ", recordLabel:" + recordLabel + "]";
+	}
 
 }
