@@ -1,4 +1,4 @@
-package src.co.edu.uptc.controller;
+package co.edu.uptc.controller;
 
 public class CancionController {
 

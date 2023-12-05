@@ -1,7 +1,7 @@
-package src.co.edu.uptc.controller;
+package co.edu.uptc.controller;
 
 
-import src.co.edu.uptc.model.Album;
+import co.edu.uptc.model.Album;
 
 import java.util.ArrayList;
 

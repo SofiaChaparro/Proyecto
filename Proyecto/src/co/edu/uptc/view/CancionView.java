@@ -1,6 +1,6 @@
-package src.co.edu.uptc.view;
+package co.edu.uptc.view;
 
-import src.co.edu.uptc.model.Cancion;
+import co.edu.uptc.model.Cancion;
 
 import java.util.Scanner;
 

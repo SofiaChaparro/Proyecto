@@ -1,4 +1,4 @@
-package src.co.edu.uptc.model;
+package co.edu.uptc.model;
 
 public class Cancion {
 

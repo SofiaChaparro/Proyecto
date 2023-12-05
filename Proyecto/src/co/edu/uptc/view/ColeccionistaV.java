@@ -1,6 +1,6 @@
-package src.co.edu.uptc.view;
+package co.edu.uptc.view;
 
-import src.co.edu.uptc.controller.ColeccionistaC;
+import co.edu.uptc.controller.ColeccionistaC;
 import co.edu.uptc.controller.ValidarDatosC;
 import co.edu.uptc.model.ColeccionistaM;
 

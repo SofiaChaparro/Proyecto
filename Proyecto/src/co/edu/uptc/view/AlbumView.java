@@ -1,6 +1,6 @@
-package src.co.edu.uptc.view;
+package co.edu.uptc.view;
 
-import src.co.edu.uptc.controller.AlbumController;
+import co.edu.uptc.controller.AlbumController;
 import java.util.Scanner;
 
 

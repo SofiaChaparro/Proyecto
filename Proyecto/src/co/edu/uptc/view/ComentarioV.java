@@ -16,6 +16,7 @@ public class ComentarioV {
         //	mtdReg();
         //	mtdEliminar();
         mtdEliminar();
+        
 
     }
 
