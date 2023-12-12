@@ -4,14 +4,22 @@ import java.util.ArrayList;
 
 public class Banda {
 
-    public int performer;
+	public static ArrayList<Banda> getArrayBanda() {
+		return arrayBanda;
+	}
+
+	public void setArrayBanda(ArrayList<Banda> arrayBanda) {
+		this.arrayBanda = arrayBanda;
+	}
+
+	public int performer;
     private String name;
     private String genero;
     private String creationDate;
     private String birthDate;
     private String image;
     private String description;
-    ArrayList<Banda> arrayBanda = new ArrayList<Banda>();
+    static ArrayList<Banda> arrayBanda = new ArrayList<Banda>();
 
     public Banda(String name, String genero, String creationDate, String birthDate, String image, String description) {
         this.name = name;
