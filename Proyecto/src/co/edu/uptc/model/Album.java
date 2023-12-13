@@ -5,20 +5,21 @@ import java.util.ArrayList;
 
 
 public class Album {
-	String name;
-	String cover;
-	String description;
-	String releaseDate;
-	String genre;
-	String recordLabel;
-	static ArrayList<Object> albunes = new ArrayList<Object>(5);
+	private String name;
+	private String cover;
+	private String description;
+	private String releaseDate;
+	private String genre;
+	private String recordLabel;
+
+	private ArrayList<Cancion> cancionesAlbum;
 
 	public String getName() {
 		return name;
 	}
 
 	public Album(String name, String cover, String description, String releaseDate, String genre,
-			String recordLabel) {
+				 String recordLabel) {
 
 		this.name = name;
 		this.cover = cover;
@@ -26,15 +27,20 @@ public class Album {
 		this.releaseDate = releaseDate;
 		this.genre = genre;
 		this.recordLabel = recordLabel;
-		this.albunes = new ArrayList<>();
+		this.cancionesAlbum = new ArrayList<>();
 	}
 
-	public static ArrayList<Object> getAlbunes() {
-		return albunes;
+
+	public ArrayList<Cancion> getCancionesAlbum() {
+		return cancionesAlbum;
 	}
 
-	public static void setAlbunes(ArrayList<Object> albunes) {
-		Album.albunes = albunes;
+	public void setCancionesAlbum(ArrayList<Cancion> cancionesAlbum) {
+		this.cancionesAlbum = cancionesAlbum;
+	}
+
+	public void addCancion(Cancion cancion) {
+		this.cancionesAlbum.add(cancion);
 	}
 
 	public void setName(String name) {
