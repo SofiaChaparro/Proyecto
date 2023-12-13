@@ -53,11 +53,11 @@ public class ColeccionistaM {
         objC1.setClave(objC.getClave());
         objC1.setEmail(objC.getEmail());
         arrayColeccionistas.add(objC1);
-        System.out.println(arrayColeccionistas.size());
+       // System.out.println(arrayColeccionistas.size());
 
-        for (int i = 0; i < arrayColeccionistas.size(); i++) {
+       /* for (int i = 0; i < arrayColeccionistas.size(); i++) {
             System.out.println(arrayColeccionistas.get(i).getNombre());
-        }
+        }*/
         return "Su registro fue exitoso";
     }
 
@@ -65,21 +65,12 @@ public class ColeccionistaM {
         String r = "";
         for (int i = 0; i < arrayColeccionistas.size(); i++) {
             if (arrayColeccionistas.get(i).getEmail().equals(email) && arrayColeccionistas.get(i).getClave().equals(clave)) {
-                r = "Bienvenido";
+                r = arrayColeccionistas.get(i).getNombre()+","+i;
                 break;
-            } else if (arrayColeccionistas.get(i).getEmail().equals(email) || arrayColeccionistas.get(i).getClave().equals(clave)) {
-                if (r == "") {
-                    r = "Datos Incorrectos";
-                }
-
-            } else {
-                if (r == "") {
-                    r = "No se encuentra registrado";
-                }
-
-            }
-        }
-        System.out.println(r);
+            } 
+         }
+        
+       // System.out.println(r);
 
         return r;
     }

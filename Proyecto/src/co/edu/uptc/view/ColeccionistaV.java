@@ -14,13 +14,9 @@ public class ColeccionistaV {
     public static ColeccionistaM objColecc = new ColeccionistaM();
     public static ColeccionistaC objColeccC = new ColeccionistaC();
 
-    public static void main(String args[]) {
-        mtdRegistrarCo();
-        mtdLogin();
-
-    }
 
     public static void mtdRegistrarCo() {
+    	
 
 
         String nombre, telefono, email, clave;
@@ -103,14 +99,14 @@ public class ColeccionistaV {
 
     }
 
-    public static void mtdLogin() {
+    public static String mtdLogin() {
         String email, clave;
         System.out.println("Digite su email");
         email = sc.next();
 
         System.out.println("Digite su clave");
         clave = sc.next();
-        System.out.println(objColeccC.mtdLoginC(email, clave));
+        return objColeccC.mtdLoginC(email, clave);
     }
 
 }
