@@ -1,13 +1,13 @@
 package co.edu.uptc.view;
 
+
 import java.util.Scanner;
 
-import co.edu.uptc.controller.AlbumC;
+import co.edu.uptc.controller.AlbumController;
 
 
-
-public class AlbumV {
-	AlbumC album = new AlbumC();
+public class AlbumView {
+	AlbumController album = new AlbumController();
 	static Scanner pat = new Scanner(System.in);
 
 	public  void DatosAlbum() {
@@ -27,8 +27,15 @@ public class AlbumV {
 
 
 	}
-
+public void IndiceAlbum() {
+	System.out.println("Ingrese indice");
+	album.BorrarAlbum(pat.nextInt());
+	
+}
 
 
 
 	}
+
+
+

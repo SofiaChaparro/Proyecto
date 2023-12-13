@@ -3,6 +3,7 @@ package co.edu.uptc.model;
 import java.util.ArrayList;
 
 public class ComentarioM {
+
 	
 	public String descripcion;
 	public int clasificacion;
@@ -38,24 +39,24 @@ public class ComentarioM {
 		objComentario.setDescripcion(objCom.getDescripcion());
 		objComentario.setClasificacion(objCom.getClasificacion());
 		lista.add(objCom);
-		/*for(int i=0; i<lista.size(); i++) {
-			System.out.println(lista.get(i).getDescripcion());
-		}*/
-		return "Registro exitoso";
+
+        return "Registro exitoso";
 	}
-	 public String mtdEliminarM(int clasificacion) {
-		 String r="El comentario no se encuentra registrado, verifique el numero de clasificacion ";
-		 for(int i=0; i<lista.size(); i++) {
-			 if(lista.get(i).getClasificacion()==clasificacion) {
-				 lista.remove(i);
-				 r="El comentario fue eliminado";
-			 }
-		 }
+
+
+    public String mtdEliminarM(int clasificacion) {
+        String r = "El comentario no se encuentra registrado, verifique el numero de clasificacion ";
+        for (int i = 0; i < lista.size(); i++) {
+            if (lista.get(i).getClasificacion() == clasificacion) {
+                lista.remove(i);
+                r = "El comentario fue eliminado";
+            }
+        }
 		/* for(int i=0; i<lista.size(); i++) {
 				System.out.println(lista.get(i).getDescripcion());
 			}*/
-		 
-		 return r;
-	 }
+
+        return r;
+    }
 
 }

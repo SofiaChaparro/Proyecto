@@ -3,19 +3,21 @@ package co.edu.uptc.model;
 
 import java.util.ArrayList;
 
-public class AlbumM {
+
+public class Album {
 	String name;
 	String cover;
 	String description;
 	String releaseDate;
 	String genre;
 	String recordLabel;
+	static ArrayList<Object> albunes = new ArrayList<Object>(5);
 
 	public String getName() {
 		return name;
 	}
 
-	public AlbumM(String name, String cover, String description, String releaseDate, String genre,
+	public Album(String name, String cover, String description, String releaseDate, String genre,
 			String recordLabel) {
 
 		this.name = name;
@@ -24,8 +26,16 @@ public class AlbumM {
 		this.releaseDate = releaseDate;
 		this.genre = genre;
 		this.recordLabel = recordLabel;
+		this.albunes = new ArrayList<>();
 	}
 
+	public static ArrayList<Object> getAlbunes() {
+		return albunes;
+	}
+
+	public static void setAlbunes(ArrayList<Object> albunes) {
+		Album.albunes = albunes;
+	}
 
 	public void setName(String name) {
 		this.name = name;
@@ -73,8 +83,8 @@ public class AlbumM {
 
 	@Override
 	public String toString() {
-		return "AlbunesM [name=" + name + ", cover=" + cover + ", description=" + description + ", releaseDate="
-				+ releaseDate + ", genre=" + genre + ", recordLabel=" + recordLabel + "]";
+		return "AlbunesM [name:" + name + ", cover:" + cover + ", description:" + description + ", releaseDate:"
+				+ releaseDate + ", genre:" + genre + ", recordLabel:" + recordLabel + "]";
 	}
 
 }

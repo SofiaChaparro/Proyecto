@@ -3,6 +3,7 @@ package co.edu.uptc.controller;
 import co.edu.uptc.model.ComentarioM;
 
 public class ComentarioC {
+
 	
 	ComentarioM objCome=new ComentarioM();
 	

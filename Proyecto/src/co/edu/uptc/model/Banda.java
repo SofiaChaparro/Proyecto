@@ -1,18 +1,27 @@
 package co.edu.uptc.model;
 
-public class BandaM {
-<<<<<<< HEAD
-	
+import java.util.ArrayList;
+
+public class Banda {
+
+	public static ArrayList<Banda> getArrayBanda() {
+		return arrayBanda;
+	}
+
+	public void setArrayBanda(ArrayList<Banda> arrayBanda) {
+		this.arrayBanda = arrayBanda;
+	}
+
 	public int performer;
-=======
     private String name;
     private String genero;
     private String creationDate;
     private String birthDate;
     private String image;
     private String description;
-    ArrayList<Banda> arrayBanda = new ArrayList<Banda>();
-    public BandaV(String name, String genero, String creationDate, String birthDate, String image, String description) {
+    static ArrayList<Banda> arrayBanda = new ArrayList<Banda>();
+
+    public Banda(String name, String genero, String creationDate, String birthDate, String image, String description) {
         this.name = name;
         this.genero = genero;
         this.creationDate = creationDate;
@@ -20,10 +29,10 @@ public class BandaM {
         this.image = image;
         this.description = description;
     }
+
     public String getName() {
         return name;
     }
->>>>>>> branch 'develop' of https://github.com/SofiaChaparro/Proyecto.git
 
     public void setName(String name) {
         this.name = name;
@@ -68,7 +77,8 @@ public class BandaM {
     public void setDescription(String description) {
         this.description = description;
     }
-    public toString(){
-        return "Nombre: "+name+" Genero: "+genero+" Fecha de creacion: "+creationDate+" Fecha de nacimiento: "+birthDate+" Imagen: "+image+" Descripcion: "+description;
+
+    public String toString() {
+        return "Banda{" + "name=" + name + ", genero=" + genero + ", creationDate=" + creationDate + ", birthDate=" + birthDate + ", image=" + image + ", description=" + description + '}';
     }
 }
