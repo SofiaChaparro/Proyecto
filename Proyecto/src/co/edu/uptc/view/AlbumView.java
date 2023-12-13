@@ -4,6 +4,7 @@ package co.edu.uptc.view;
 import java.util.Scanner;
 
 import co.edu.uptc.controller.AlbumController;
+import co.edu.uptc.controller.CancionController;
 
 
 public class AlbumView {
@@ -31,6 +32,9 @@ public void IndiceAlbum() {
 	System.out.println("Ingrese indice");
 	album.BorrarAlbum(pat.nextInt());
 	
+}
+public void Agregarcancion() {
+	CancionController cancion = new CancionController();
 }
 
 
