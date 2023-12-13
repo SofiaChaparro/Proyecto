@@ -6,6 +6,7 @@ import co.edu.uptc.view.ColeccionistaV;
 
 public class run {
     public static void main(String[] args) {
+
     	
     	ColeccionistaV objColecV=new ColeccionistaV();
     	Scanner sc=new Scanner(System.in);
@@ -182,6 +183,7 @@ public class run {
     	
     	
     	
+
     }
 
 }
