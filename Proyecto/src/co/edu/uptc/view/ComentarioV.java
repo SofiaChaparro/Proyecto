@@ -13,11 +13,16 @@ public class ComentarioV {
 	
 	public static void main(String[] args) {
 		mtdReg();
-	//	mtdReg();
+		mtdReg();
 	//	mtdEliminar();
-		mtdEliminar();
+		//mtdEliminar();
+		
+		objComC.mtdEditar();
+		
 
 	}
+	
+	
 	
 	public static void mtdReg() {
 		String des;

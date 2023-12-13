@@ -12,5 +12,8 @@ public class ComentarioC {
 	public String mtdEliminarC(int clas) {
 		return objCome.mtdEliminarM(clas);
 	}
+	public void mtdEditar() {
+		objCome.mtdEditar();
+	}
 
 }
