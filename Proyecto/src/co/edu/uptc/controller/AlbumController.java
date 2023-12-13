@@ -1,6 +1,6 @@
 package co.edu.uptc.controller;
-import co.edu.uptc.model.ColectorAlbum;
 import co.edu.uptc.model.Album;
+import co.edu.uptc.model.CollectorAlbum;
 
 import java.util.ArrayList;
 
@@ -67,14 +67,21 @@ public class AlbumController  {
 		public void editarDiscografica(Album album, String nuevaDiscografica) {
 			album.setRecordLabel(nuevaDiscografica);
 		}
-		public ArrayList<Album> obtenerAlbumes() {
-			return collectorAlbum.getAlbumes();
+	public void mostrarAlbumes() {
+		if (collectorAlbum.getAlbumes().isEmpty()) {
+			System.out.println("No hay álbumes en la colección.");
+		} else {
+			System.out.println("Lista de álbumes:");
+			for (Album album : collectorAlbum.getAlbumes()) {
+				System.out.println(album);
+			}
 		}
-
 	}
 
-
 }
+
+
+
 
 
 
