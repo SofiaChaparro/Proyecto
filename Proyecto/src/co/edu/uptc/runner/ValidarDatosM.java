@@ -1,4 +1,4 @@
-package src.co.edu.uptc.runner;
+package co.edu.uptc.runner;
 
 public class ValidarDatosM {
 
