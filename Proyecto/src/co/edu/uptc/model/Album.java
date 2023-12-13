@@ -11,7 +11,7 @@ public class Album {
 	private String releaseDate;
 	private String genre;
 	private String recordLabel;
-
+	private ArrayList<PerformerPrize> premiosAlbum;
 	private ArrayList<Cancion> cancionesAlbum;
 
 	public String getName() {
@@ -27,8 +27,23 @@ public class Album {
 		this.releaseDate = releaseDate;
 		this.genre = genre;
 		this.recordLabel = recordLabel;
+		this.premiosAlbum = new ArrayList<>();
 		this.cancionesAlbum = new ArrayList<>();
 	}
+
+	public ArrayList<PerformerPrize> getPremiosAlbum() {
+		return premiosAlbum;
+	}
+
+	public void setPremiosAlbum(ArrayList<PerformerPrize> premiosAlbum) {
+		this.premiosAlbum = premiosAlbum;
+	}
+
+	public void addPremio(PerformerPrize premio) {
+		this.premiosAlbum.add(premio);
+	}
+
+
 
 
 	public ArrayList<Cancion> getCancionesAlbum() {
@@ -87,10 +102,15 @@ public class Album {
 		this.recordLabel = recordLabel;
 	}
 
-	@Override
 	public String toString() {
-		return "AlbunesM [name:" + name + ", cover:" + cover + ", description:" + description + ", releaseDate:"
-				+ releaseDate + ", genre:" + genre + ", recordLabel:" + recordLabel + "]";
+		// Modifica el método toString para incluir los premios del álbum
+		String infoAlbum = "Album [name:" + name + ", cover:" + cover + ", description:" + description +
+				", releaseDate:" + releaseDate + ", genre:" + genre + ", recordLabel:" + recordLabel + "]";
+		String infoPremios = "Premios del álbum: ";
+		for (PerformerPrize premio : premiosAlbum) {
+			infoPremios += premio.getPrizeDetail().getName() + ", ";
+		}
+		return infoAlbum + "\n" + infoPremios;
 	}
 
 	// Método para agregar una canción al álbum
@@ -137,5 +157,16 @@ public class Album {
 		return false;
 	}
 
+
+	// Método para eliminar un premio del álbum
+	public boolean eliminarPremioDelAlbum(String nombrePremio) {
+		return premiosAlbum.removeIf(premio -> premio.getPrizeDetail().getName().equalsIgnoreCase(nombrePremio));
+
+
+	}
+
+	public void agregarPremioAlAlbum(PerformerPrize premio) {
+		this.premiosAlbum.add(premio);
+	}
 
 }

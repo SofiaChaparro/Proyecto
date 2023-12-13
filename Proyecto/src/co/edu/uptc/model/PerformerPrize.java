@@ -1,14 +1,18 @@
 package src.co.edu.uptc.model;
 
 public class PerformerPrize {
-    private String premiationDate;
-    private PrizeDetail prizeDetail;
+    private String premiationDate; // La fecha de premiación
+    private PrizeDetail prizeDetail; // El detalle del premio
 
-    public PerformerPrize(String premiationDate, PrizeDetail prizeDetail) {
-        this.premiationDate = premiationDate;
-        this.prizeDetail = prizeDetail; // Inicializa prizeDetail
+    // Constructor que acepta los detalles del premio
+    public PerformerPrize(String name, String description, String organization) {
+        // Puedes establecer premiationDate con un valor por defecto o permitir que se establezca más tarde
+        this.premiationDate = "Fecha por defecto"; // O alguna otra lógica para establecer la fecha
+        // Crea un nuevo objeto PrizeDetail con los parámetros proporcionados
+        this.prizeDetail = new PrizeDetail(name, description, organization);
     }
 
+    // Getters y setters para premiationDate y prizeDetail
     public String getPremiationDate() {
         return premiationDate;
     }
@@ -24,6 +28,5 @@ public class PerformerPrize {
     public void setPrizeDetail(PrizeDetail prizeDetail) {
         this.prizeDetail = prizeDetail;
     }
-
 
 }

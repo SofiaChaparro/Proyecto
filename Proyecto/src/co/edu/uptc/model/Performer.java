@@ -5,7 +5,6 @@ public class Performer {
     private String image;
     private String description;
 
-
     public Performer(String name, String image, String description) {
         this.name = name;
         this.image = image;

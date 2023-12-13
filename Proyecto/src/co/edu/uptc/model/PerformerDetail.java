@@ -2,35 +2,40 @@ package src.co.edu.uptc.model;
 
 import java.util.ArrayList;
 
-public class PerformerDetail extends Performer{
-    private ArrayList<PerformerPrize> prizes; // Cambiado a lista de PerformerPrize
+public class PerformerDetail extends Performer {
+    private ArrayList<PerformerPrize> premiosInterpretes; // Cambiado a lista de PerformerPrize
 
     public PerformerDetail(String name, String image, String description) {
         super(name, image, description);
-        this.prizes = new ArrayList<>();
+        this.premiosInterpretes = new ArrayList<>();
     }
 
 
 
-    public void addPrize(PerformerPrize prize){ // Cambiado a aceptar PerformerPrize
-        prizes.add(prize);
-    }
-    public boolean removePrize(String prizeName) {
-        for (PerformerPrize prize : prizes) {
-            if (prize.getPrizeDetail().getName().equalsIgnoreCase(prizeName)) {
-                prizes.remove(prize);
-                return true;
-            }
-        }
-        return false;
+    public void agregarPremioAInterprete(PerformerPrize premio) {
+        this.premiosInterpretes.add(premio);
     }
 
-    public ArrayList<PerformerPrize> getPrizes() { // Cambiado a devolver lista de PerformerPrize
-        return prizes;
+    public boolean eliminarPremioDeInterprete(String nombrePremio) {
+        return premiosInterpretes.removeIf(premio -> premio.getPrizeDetail().getName().equalsIgnoreCase(nombrePremio));
     }
 
-    public void setPrizes(ArrayList<PerformerPrize> prizes){ // Cambiado a aceptar lista de PerformerPrize
-        this.prizes = prizes;
+    public ArrayList<PerformerPrize> getPremiosInterpretes() {
+        return premiosInterpretes;
     }
 
+    public void setPremiosInterpretes(ArrayList<PerformerPrize> premiosInterpretes) {
+        this.premiosInterpretes = premiosInterpretes;
+    }
+
+
+
+    public ArrayList<PerformerPrize> getInterpretePremios() {
+        return premiosInterpretes;
+    }
+
+    // Método para eliminar un premio por nombre
+    public boolean eliminarPremio(String nombrePremio) {
+        return premiosInterpretes.removeIf(premio -> premio.getPrizeDetail().getName().equalsIgnoreCase(nombrePremio));
+    }
 }
