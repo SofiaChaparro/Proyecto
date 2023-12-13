@@ -7,18 +7,19 @@ import java.util.Scanner;
 
 public class ComentarioV {
 
-    public static ComentarioC objComC = new ComentarioC();
-    public static ComentarioM objComM = new ComentarioM();
-    public static Scanner sc = new Scanner(System.in);
-
-    public static void main(String[] args) {
-        mtdReg();
-        //	mtdReg();
-        //	mtdEliminar();
-        mtdEliminar();
-        
-
-    }
+	
+	public static ComentarioC objComC=new ComentarioC();
+	public static ComentarioM objComM=new ComentarioM();
+	public static Scanner sc=new Scanner(System.in);
+	
+	public static void main(String[] args) {
+		mtdReg();
+		mtdReg();
+	//	mtdEliminar();
+		//mtdEliminar();
+		
+		objComC.mtdEditar();
+	}
 
     public static void mtdReg() {
         String des;
