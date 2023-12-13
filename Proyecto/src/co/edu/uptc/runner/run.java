@@ -10,6 +10,7 @@ public class run {
     	Scanner datos = new Scanner(System.in);
        ColeccionistaV login= new ColeccionistaV();
        
+       
        System.out.println("BIENVENIDO");
        do {
     	   System.out.println("1. desea registarse");
@@ -20,7 +21,8 @@ public class run {
         	  login.mtdRegistrarCo();
         	  break;
           case 2:
-        	  login.mtdRegistrarCo();
+        	  
+        	  login.mtdLogin();
               System.out.println("1. desea crear album");
               System.out.println("2. desea ver albunes");
               System.out.println("3. Salir");

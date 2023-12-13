@@ -1,9 +1,14 @@
 package co.edu.uptc.controller;
 
+import co.edu.uptc.model.Banda;
+import co.edu.uptc.model.Cancion;
+
 public class CancionController {
 
-    public static void CrearCancion() {
-
+    public static void AgregarCancion(String name, String duracion) {
+    	
+    		Cancion nuevacancion = new Cancion(name,duracion);
+    	    Cancion.getCanciones().add(nuevacancion);
 
     }
 
