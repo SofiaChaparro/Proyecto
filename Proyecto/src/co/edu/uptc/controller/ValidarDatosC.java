@@ -1,6 +1,6 @@
 package co.edu.uptc.controller;
 
-import co.edu.uptc.model.ValidarDatosM;
+import co.edu.uptc.runner.ValidarDatosM;
 
 public class ValidarDatosC {
 

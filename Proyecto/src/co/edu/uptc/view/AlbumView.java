@@ -1,11 +1,14 @@
 package co.edu.uptc.view;
 import co.edu.uptc.model.Album;
+import co.edu.uptc.model.CollectorAlbum;
+
 import java.util.Scanner;
 
 import co.edu.uptc.controller.AlbumController;
-import co.edu.uptc.controller.CollectorAlbum;
+
 public class AlbumView {
 	Scanner sc = new Scanner(System.in);
+	
 	CollectorAlbum collectorAlbum = new CollectorAlbum(0.0, "Nuevo");
 	AlbumController albumController = new AlbumController(collectorAlbum);
 //	public static void main(String[] args) {
@@ -154,6 +157,3 @@ public class AlbumView {
 		albumController.mostrarAlbumes();
 	}
 }
-
-
-
