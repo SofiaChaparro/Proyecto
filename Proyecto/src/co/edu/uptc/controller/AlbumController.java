@@ -78,6 +78,45 @@ public class AlbumController  {
 		}
 	}
 
+	// Método para agregar una canción a un álbum específico
+	public boolean agregarCancionAAlbum(String nombreAlbum, String nombreCancion, String duracionCancion) {
+		Album album = buscarAlbumPorNombre(nombreAlbum);
+		if (album != null) {
+			Cancion nuevaCancion = new Cancion(nombreCancion, duracionCancion);
+			album.agregarCancionAlAlbum(nuevaCancion);
+			return true;
+		}
+		return false;
+	}
+
+	// Método para eliminar una canción de un álbum específico
+	public boolean eliminarCancionDeAlbum(String nombreAlbum, String nombreCancionEliminar) {
+		Album album = buscarAlbumPorNombre(nombreAlbum);
+		if (album != null) {
+			return album.eliminarCancionDelAlbum(nombreCancionEliminar);
+		}
+		return false;
+	}
+
+	// Método para mostrar todas las canciones de un álbum específico
+	public void mostrarCancionesDeAlbum(String nombreAlbum) {
+		Album album = buscarAlbumPorNombre(nombreAlbum);
+		if (album != null) {
+			album.mostrarCancionesDelAlbum();
+		} else {
+			System.out.println("Álbum no encontrado.");
+		}
+	}
+
+	// Método para editar una canción de un álbum específico
+	public boolean editarCancionDeAlbum(String nombreAlbum, String nombreActualCancion, String nuevoNombreCancion, String nuevaDuracionCancion) {
+		Album album = buscarAlbumPorNombre(nombreAlbum);
+		if (album != null) {
+			return album.editarCancionDelAlbum(nombreActualCancion, nuevoNombreCancion, nuevaDuracionCancion);
+		}
+		return false;
+	}
+
 }
 
 

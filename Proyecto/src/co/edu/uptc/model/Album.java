@@ -93,4 +93,49 @@ public class Album {
 				+ releaseDate + ", genre:" + genre + ", recordLabel:" + recordLabel + "]";
 	}
 
+	// Método para agregar una canción al álbum
+	public void agregarCancionAlAlbum(Cancion cancion) {
+		this.cancionesAlbum.add(cancion);
+	}
+
+	// Método para eliminar una canción del álbum
+	public boolean eliminarCancionDelAlbum(String nombreCancion) {
+		Cancion cancionAEliminar = null;
+		for (Cancion cancion : this.cancionesAlbum) {
+			if (cancion.getName().equalsIgnoreCase(nombreCancion)) {
+				cancionAEliminar = cancion;
+				break; // Salimos del ciclo una vez que encontramos la canción
+			}
+		}
+		if (cancionAEliminar != null) {
+			this.cancionesAlbum.remove(cancionAEliminar);
+			return true;
+		}
+		return false;
+	}
+
+	// Método para mostrar todas las canciones del álbum
+	public void mostrarCancionesDelAlbum() {
+		if (this.cancionesAlbum.isEmpty()) {
+			System.out.println("No hay canciones en este álbum.");
+		} else {
+			for (Cancion cancion : this.cancionesAlbum) {
+				System.out.println(cancion);
+			}
+		}
+	}
+
+	// Método para editar una canción del álbum
+	public boolean editarCancionDelAlbum(String nombreActual, String nuevoNombre, String nuevaDuracion) {
+		for (Cancion cancion : this.cancionesAlbum) {
+			if (cancion.getName().equalsIgnoreCase(nombreActual)) {
+				cancion.setName(nuevoNombre);
+				cancion.setDuracion(nuevaDuracion);
+				return true;
+			}
+		}
+		return false;
+	}
+
+
 }

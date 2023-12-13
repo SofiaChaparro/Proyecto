@@ -4,37 +4,42 @@ import java.util.ArrayList;
 
 public class Cancion {
 
-        public static ArrayList<Cancion> getCanciones() {
-		return canciones;
-	}
+    public static ArrayList<Cancion> getCanciones() {
+        return canciones;
+    }
 
-	public static void setCanciones(ArrayList<Cancion> canciones) {
-		Cancion.canciones = canciones;
-	}
+    public static void setCanciones(ArrayList<Cancion> canciones) {
+        Cancion.canciones = canciones;
+    }
 
-		private String name;
-        private String duracion;
-        
-        static ArrayList <Cancion> canciones = new ArrayList<Cancion>();
+    private String name;
+    private String duracion;
 
-        public Cancion(String name, String duracion) {
-            this.name = name;
-            this.duracion = duracion;
-        }
+    static ArrayList<Cancion> canciones = new ArrayList<Cancion>();
 
-        public String getName() {
-            return name;
-        }
+    public Cancion(String name, String duracion) {
+        this.name = name;
+        this.duracion = duracion;
+    }
 
-        public String getDuracion() {
-            return duracion;
-        }
+    public String getName() {
+        return name;
+    }
 
-        public void setName(String name) {
-            this.name = name;
-        }
+    public String getDuracion() {
+        return duracion;
+    }
 
-        public void setDuracion(String duracion) {
-            this.duracion = duracion;
-        }
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setDuracion(String duracion) {
+        this.duracion = duracion;
+    }
+
+    @Override
+    public String toString() {
+        return "Canción: " + this.getName() + " - Duración: " + this.getDuracion();
+    }
 }
