@@ -1,24 +1,22 @@
-package co.edu.uptc.controller;
-import co.edu.uptc.model.Album;
-import co.edu.uptc.model.CollectorAlbum;
-import co.edu.uptc.model.PerformerDetail;
-import co.edu.uptc.model.PerformerPrize;
+package src.co.edu.uptc.controller;
+import src.co.edu.uptc.model.*;
+
 import java.util.ArrayList;
 
 public class PrizeController {
-    private CollectorAlbum collectorAlbum;
+    private Coleccionista coleccionista;
     private ArrayList<PerformerDetail> listaInterpretes;
 
-    public PrizeController(CollectorAlbum collectorAlbum, ArrayList<PerformerDetail> listaInterpretes) {
-        this.collectorAlbum = collectorAlbum;
+    public PrizeController(Coleccionista coleccionista, ArrayList<PerformerDetail> listaInterpretes) {
+        this.coleccionista = coleccionista;
         this.listaInterpretes = listaInterpretes;
     }
 
     // Métodos para manejar premios de álbumes
     public boolean agregarPremioAAlbum(String nombreAlbum, PerformerPrize premio) {
-        for (Album album : collectorAlbum.getAlbumes()) {
-            if (album.getName().equalsIgnoreCase(nombreAlbum)) {
-                album.agregarPremioAlAlbum(premio);
+        for (CollectorAlbum collectorAlbum : coleccionista.getAlbumes()) {
+            if (collectorAlbum.getAlbum().getName().equalsIgnoreCase(nombreAlbum)) {
+                collectorAlbum.getAlbum().agregarPremioAlAlbum(premio);
                 return true;
             }
         }
@@ -26,18 +24,18 @@ public class PrizeController {
     }
 
     public boolean eliminarPremioDeAlbum(String nombreAlbum, String nombrePremio) {
-        for (Album album : collectorAlbum.getAlbumes()) {
-            if (album.getName().equalsIgnoreCase(nombreAlbum)) {
-                return album.eliminarPremioDelAlbum(nombrePremio);
+        for (CollectorAlbum collectorAlbum : coleccionista.getAlbumes()) {
+            if (collectorAlbum.getAlbum().getName().equalsIgnoreCase(nombreAlbum)) {
+                return collectorAlbum.getAlbum().eliminarPremioDelAlbum(nombrePremio);
             }
         }
         return false;
     }
 
     public ArrayList<PerformerPrize> obtenerPremiosDeAlbum(String nombreAlbum) {
-        for (Album album : collectorAlbum.getAlbumes()) {
-            if (album.getName().equalsIgnoreCase(nombreAlbum)) {
-                return album.getPremiosAlbum();
+        for (CollectorAlbum collectorAlbum : coleccionista.getAlbumes()) {
+            if (collectorAlbum.getAlbum().getName().equalsIgnoreCase(nombreAlbum)) {
+                return collectorAlbum.getAlbum().getPremiosAlbum();
             }
         }
         return null;

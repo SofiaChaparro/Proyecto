@@ -1,13 +1,14 @@
-package co.edu.uptc.model;
+package src.co.edu.uptc.model;
 
 import java.util.ArrayList;
+import java.util.Date;
 
 public class BandDetail extends Banda {
     private ArrayList<Musician> musicians;
 
-    public BandDetail(String name, String description, String organization) {
-        super(name, description, organization);
-        this.musicians = new ArrayList<>();
+    public BandDetail(String name, String image, String description, Date fechaCreacion, ArrayList<Musician> musicians) {
+        super(name, image, description, fechaCreacion);
+        this.musicians = musicians;
     }
 
     public ArrayList<Musician> getMusicians() {

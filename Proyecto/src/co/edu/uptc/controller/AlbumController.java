@@ -1,6 +1,8 @@
-package co.edu.uptc.controller;
-import co.edu.uptc.model.Album;
-import co.edu.uptc.model.CollectorAlbum;
+package src.co.edu.uptc.controller;
+import src.co.edu.uptc.model.Album;
+import src.co.edu.uptc.model.Cancion;
+import src.co.edu.uptc.model.Coleccionista;
+import src.co.edu.uptc.model.CollectorAlbum;
 
 import java.util.ArrayList;
 
@@ -8,72 +10,55 @@ import java.util.ArrayList;
 
 public class AlbumController  {
 
-		private CollectorAlbum collectorAlbum;
+	private Coleccionista coleccionista;
 
-		public AlbumController(CollectorAlbum collectorAlbum) {
-			this.collectorAlbum = collectorAlbum;
-		}
+	public AlbumController(Coleccionista coleccionista) {
+		this.coleccionista = coleccionista;
+	}
 
-		// Método para crear y agregar un nuevo álbum
-		public void crearAlbum(String name, String cover, String description, String releaseDate, String genre, String recordLabel) {
-			Album newAlbum = new Album(name, cover, description, releaseDate, genre, recordLabel);
-			collectorAlbum.addAlbum(newAlbum);
-		}
-		public boolean eliminarAlbum(String albumNameDelete) {
-			Album albumParaEliminar = null;
-			for (Album a : collectorAlbum.getAlbumes()) {
-				if (a.getName().equalsIgnoreCase(albumNameDelete)) {
-					albumParaEliminar = a;
-					break;
-				}
-			}
+	// Método para crear y agregar un nuevo álbum
+	public void crearAlbum(String name, String cover, String description, String releaseDate, String genre, String recordLabel) {
+		Album newAlbum = new Album(name, cover, description, releaseDate, genre, recordLabel);
+		CollectorAlbum collectorAlbum = new CollectorAlbum(0, "Nuevo", newAlbum);
+		coleccionista.addAlbum(collectorAlbum);
+	}
 
-			if (albumParaEliminar != null) {
-				collectorAlbum.getAlbumes().remove(albumParaEliminar);
-				return true;
-			} else {
-				return false;
+	public boolean eliminarAlbum(String albumNameDelete) {
+		CollectorAlbum albumParaEliminar = null;
+		for (CollectorAlbum a : coleccionista.getAlbumes()) {
+			if (a.getAlbum().getName().equalsIgnoreCase(albumNameDelete)) {
+				albumParaEliminar = a;
+				break;
 			}
 		}
-		// Método para buscar un álbum por nombre
-		public Album buscarAlbumPorNombre(String nombreBusqueda) {
-			for (Album album : collectorAlbum.getAlbumes()) {
-				if (album.getName().equalsIgnoreCase(nombreBusqueda)) {
-					return album;
-				}
+
+		if (albumParaEliminar != null) {
+			coleccionista.getAlbumes().remove(albumParaEliminar);
+			return true;
+		} else {
+			return false;
+		}
+	}
+
+	// Método para buscar un álbum por nombre
+	public Album buscarAlbumPorNombre(String nombreBusqueda) {
+		for (CollectorAlbum collectorAlbum : coleccionista.getAlbumes()) {
+			if (collectorAlbum.getAlbum().getName().equalsIgnoreCase(nombreBusqueda)) {
+				return collectorAlbum.getAlbum();
 			}
-			return null; // Retorna null si no se encuentra el álbum
 		}
-		public void editarNombre(Album album, String nuevoNombre) {
-			album.setName(nuevoNombre);
-		}
+		return null; // Retorna null si no se encuentra el álbum
+	}
 
-		public void editarPortada(Album album, String nuevaPortada) {
-			album.setCover(nuevaPortada);
-		}
+	// Tus otros métodos aquí...
 
-		public void editarDescripcion(Album album, String nuevaDescripcion) {
-			album.setDescription(nuevaDescripcion);
-		}
-
-		public void editarFechaLanzamiento(Album album, String nuevaFechaLanzamiento) {
-			album.setReleaseDate(nuevaFechaLanzamiento);
-		}
-
-		public void editarGenero(Album album, String nuevoGenero) {
-			album.setGenre(nuevoGenero);
-		}
-
-		public void editarDiscografica(Album album, String nuevaDiscografica) {
-			album.setRecordLabel(nuevaDiscografica);
-		}
 	public void mostrarAlbumes() {
-		if (collectorAlbum.getAlbumes().isEmpty()) {
+		if (coleccionista.getAlbumes().isEmpty()) {
 			System.out.println("No hay álbumes en la colección.");
 		} else {
 			System.out.println("Lista de álbumes:");
-			for (Album album : collectorAlbum.getAlbumes()) {
-				System.out.println(album);
+			for (CollectorAlbum collectorAlbum : coleccionista.getAlbumes()) {
+				System.out.println(collectorAlbum.getAlbum());
 			}
 		}
 	}

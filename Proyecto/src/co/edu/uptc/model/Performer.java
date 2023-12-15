@@ -1,4 +1,4 @@
-package co.edu.uptc.model;
+package src.co.edu.uptc.model;
 
 public class Performer {
     private String name;

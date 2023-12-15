@@ -1,29 +1,25 @@
-package co.edu.uptc.model;
+package src.co.edu.uptc.model;
 
 import java.util.ArrayList;
 
 public class CollectorAlbum {
     private double precio;
     private String estado;
-    private ArrayList<Album> albumes;
+    private Album album;
 
-    public CollectorAlbum(double precio, String estado) {
+
+    public CollectorAlbum(double precio, String estado, Album album) {
         this.precio = precio;
         this.estado = estado;
-        this.albumes = new ArrayList<>();
+        this.album = album;
     }
 
-
-
-    public ArrayList<Album> getAlbumes() {
-        return albumes;
+    public Album getAlbum() {
+        return album;
     }
 
-    public void setAlbumes(ArrayList<Album> albumes) {
-        this.albumes = albumes;
-    }
-    public void addAlbum(Album album){
-        this.albumes.add(album);
+    public void setAlbum(Album album) {
+        this.album = album;
     }
 
     public double getPrecio() {

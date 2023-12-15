@@ -1,4 +1,4 @@
-package co.edu.uptc.model;
+package src.co.edu.uptc.model;
 
 public class Prize {
         private String name;
@@ -36,4 +36,4 @@ public class Prize {
         }
 
     }
-}
+

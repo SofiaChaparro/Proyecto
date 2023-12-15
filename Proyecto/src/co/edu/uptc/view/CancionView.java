@@ -1,11 +1,17 @@
-package co.edu.uptc.view;
+package src.co.edu.uptc.view;
 
-import co.edu.uptc.model.Cancion;
+import src.co.edu.uptc.model.Cancion;
+import src.co.edu.uptc.model.Album;
+import src.co.edu.uptc.controller.AlbumController;
+import src.co.edu.uptc.model.CollectorAlbum;
+
 
 import java.util.Scanner;
 
 public class CancionView {
     Scanner sc = new Scanner(System.in);
+    CollectorAlbum collectorAlbum = new CollectorAlbum(0.0, "Nuevo");
+    AlbumController albumController = new AlbumController(collectorAlbum);
 
     public void agregarCancionAAlbumVista() {
         System.out.println("Ingrese el nombre del álbum:");

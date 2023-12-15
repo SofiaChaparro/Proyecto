@@ -1,10 +1,10 @@
-package co.edu.uptc.view;
-import co.edu.uptc.model.Album;
-import co.edu.uptc.model.CollectorAlbum;
+package src.co.edu.uptc.view;
+import src.co.edu.uptc.model.Album;
+import src.co.edu.uptc.model.CollectorAlbum;
 
 import java.util.Scanner;
 
-import co.edu.uptc.controller.AlbumController;
+import src.co.edu.uptc.controller.AlbumController;
 
 public class AlbumView {
 	Scanner sc = new Scanner(System.in);

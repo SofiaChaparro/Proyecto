@@ -1,4 +1,4 @@
-package co.edu.uptc.model;
+package src.co.edu.uptc.model;
 
 import java.util.Date;
 

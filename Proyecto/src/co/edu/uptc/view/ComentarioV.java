@@ -1,7 +1,6 @@
-package co.edu.uptc.view;
+package src.co.edu.uptc.view;
 
-import co.edu.uptc.controller.ComentarioC;
-import co.edu.uptc.model.ComentarioM;
+import src.co.edu.uptc.model.ComentarioM;
 
 import java.util.Scanner;
 

@@ -1,5 +1,10 @@
 package src.co.edu.uptc.view;
 
+import src.co.edu.uptc.controller.PrizeController;
+import src.co.edu.uptc.model.PerformerPrize;
+
+import java.util.Scanner;
+
 public class PrizeView {
     private PrizeController prizeController;
     private Scanner sc;

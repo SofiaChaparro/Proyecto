@@ -1,6 +1,6 @@
-package co.edu.uptc.controller;
+package src.co.edu.uptc.controller;
 
-import co.edu.uptc.model.Cancion;
+import src.co.edu.uptc.model.Cancion;
 
 public class CancionController {
 
