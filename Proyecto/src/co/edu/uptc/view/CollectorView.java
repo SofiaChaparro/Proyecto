@@ -9,10 +9,15 @@ import java.util.Scanner;
 
 public class CollectorView {
     Scanner sc = new Scanner(System.in);
-    CollectorDetail collectorDetail = new CollectorDetail();
-    Coleccionista coleccionista = new Coleccionista("nombre", "telefono", "email", "clave");
-    CollectorController collectorController = new CollectorController(coleccionista, collectorDetail);
+    private Coleccionista coleccionista;
+    private CollectorController collectorController;
+    private CollectorDetail collectorDetail; // Asegúrate de inicializar esto
 
+    public CollectorView(Coleccionista coleccionista, CollectorDetail collectorDetail) {
+        this.coleccionista = coleccionista;
+        this.collectorDetail = collectorDetail;
+        this.collectorController = new CollectorController(coleccionista, collectorDetail);
+    }
 
     public void registrarColeccionista() {
 
@@ -36,9 +41,10 @@ public class CollectorView {
         boolean isRegistered = collectorController.registrarColeccionista(coleccionista);
 
         if (isRegistered) {
-            System.out.println("El coleccionista es válido y ha sido registrado exitosamente.");
+
+            System.out.println("\n El coleccionista es válido y ha sido registrado exitosamente.");
         } else {
-            System.out.println("El coleccionista no es válido. Por favor, revise los datos e intente de nuevo.");
+            System.out.println("\n El coleccionista no es válido. Por favor, revise los datos e intente de nuevo.");
         }
     }
 
@@ -54,10 +60,15 @@ public class CollectorView {
         boolean inicioSesionExitoso = collectorController.validarInicioSesion(email, clave);
 
         if (inicioSesionExitoso) {
+            System.out.println("----------------------------------");;
             System.out.println("Inicio de sesión exitoso.");
+            System.out.println("Bienvenido, " + coleccionista.getNombre() + "!");
+            System.out.println("----------------------------------");
             return true;
         } else {
+            System.out.println("----------------------------------");
             System.out.println("Email o clave incorrectos. Por favor, intente de nuevo.");
+            System.out.println("----------------------------------");
             return false;
         }
     }

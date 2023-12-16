@@ -4,15 +4,57 @@ import src.co.edu.uptc.controller.AlbumController;
 import src.co.edu.uptc.model.Album;
 import src.co.edu.uptc.model.Coleccionista;
 import src.co.edu.uptc.model.CollectorAlbum;
+import src.co.edu.uptc.model.Review;
 
 import java.util.Scanner;
 
 public class AlbumView {
     Scanner sc = new Scanner(System.in);
+    private Coleccionista coleccionista;
+    private AlbumController albumController;
 
-    Coleccionista coleccionista = new Coleccionista("nombre", "telefono", "email", "clave");
-    AlbumController albumController = new AlbumController(coleccionista);
+    public AlbumView(Coleccionista coleccionista) {
+        this.coleccionista = coleccionista;
+        this.albumController = new AlbumController(coleccionista);
+    }
 
+    public void showMenu() {
+        int opcionAlbum;
+        do {
+            System.out.println("Gestión de álbumes");
+            System.out.println("----------------------------------");
+            System.out.println("1. Agregar álbum");
+            System.out.println("2. Eliminar álbum");
+            System.out.println("3. Editar álbum");
+            System.out.println("4. Mostrar álbumes");
+            System.out.println("5. Volver al menú anterior");
+            System.out.println("----------------------------------");
+            System.out.println("Elige una opción: ");
+            System.out.println("----------------------------------");
+            opcionAlbum = sc.nextInt();
+            sc.nextLine();
+
+            switch (opcionAlbum) {
+                case 1:
+                    DatosAlbum();
+                    break;
+                case 2:
+                    eliminarAlbum();
+                    break;
+                case 3:
+                    editarAlbumVista();
+                    break;
+                case 4:
+                    mostrarAlbumes(coleccionista);
+                    break;
+                case 5:
+                    System.out.println("Volviendo al menú anterior...");
+                    break;
+                default:
+                    System.out.println("Opción no válida. Por favor, elige una opción del menú.");
+            }
+        } while (opcionAlbum != 5);
+    }
 
     public void DatosAlbum() {
 
@@ -115,6 +157,7 @@ public class AlbumView {
             System.out.println("Álbum no encontrado.");
         }
     }
+
     public void mostrarAlbumes(Coleccionista coleccionista) {
         if (coleccionista.getAlbumes().isEmpty()) {
             System.out.println("No hay álbumes en la colección.");
@@ -123,6 +166,28 @@ public class AlbumView {
             for (CollectorAlbum collectorAlbum : coleccionista.getAlbumes()) {
                 System.out.println(collectorAlbum.getAlbum().getName());
             }
+        }
+    }
+
+    public void agregarComentarioYCalificacion() {
+        System.out.println("Ingrese el nombre del álbum al que desea agregar un comentario y una calificación:");
+        String albumName = sc.nextLine();
+        Album albumParaComentar = albumController.buscarAlbumPorNombre(albumName);
+
+        if (albumParaComentar != null) {
+            System.out.println("Ingrese su comentario:");
+            String comment = sc.nextLine();
+
+            System.out.println("Ingrese su calificación (de 1 a 5):");
+            double rating = sc.nextDouble();
+            sc.nextLine();  // consume the newline
+
+            Review review = new Review(comment, rating);
+            albumParaComentar.addReview(review);
+
+            System.out.println("Comentario y calificación agregados exitosamente.");
+        } else {
+            System.out.println("Álbum no encontrado.");
         }
     }
 }

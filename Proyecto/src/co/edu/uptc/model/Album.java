@@ -13,6 +13,7 @@ public class Album {
 	private String recordLabel;
 	private ArrayList<PerformerPrize> premiosAlbum;
 	private ArrayList<Cancion> cancionesAlbum;
+	private ArrayList<Review> reviews;
 
 	public String getName() {
 		return name;
@@ -29,6 +30,30 @@ public class Album {
 		this.recordLabel = recordLabel;
 		this.premiosAlbum = new ArrayList<>();
 		this.cancionesAlbum = new ArrayList<>();
+		this.reviews = new ArrayList<>();
+	}
+
+	public ArrayList<Review> getReviews() {
+		return reviews;
+	}
+
+	public void setReviews(ArrayList<Review> reviews) {
+		this.reviews = reviews;
+	}
+
+	public void addReview(Review review) {
+		this.reviews.add(review);
+	}
+	public void mediaRating() {
+		if (this.reviews.isEmpty()) {
+			System.out.println("No hay reviews en este álbum.");
+		} else {
+			int suma = 0;
+			for (Review review : this.reviews) {
+				suma += review.getRating();
+			}
+			System.out.println("El rating promedio del álbum es: " + suma / this.reviews.size());
+		}
 	}
 
 	public ArrayList<PerformerPrize> getPremiosAlbum() {
@@ -114,9 +139,7 @@ public class Album {
 	}
 
 	// Método para agregar una canción al álbum
-	public void agregarCancionAlAlbum(Cancion cancion) {
-		this.cancionesAlbum.add(cancion);
-	}
+
 
 	// Método para eliminar una canción del álbum
 	public boolean eliminarCancionDelAlbum(String nombreCancion) {

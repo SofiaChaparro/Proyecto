@@ -2,6 +2,7 @@ package src.co.edu.uptc.view;
 
 import src.co.edu.uptc.controller.BandaController;
 import src.co.edu.uptc.model.Banda;
+import src.co.edu.uptc.model.Coleccionista;
 import src.co.edu.uptc.model.Musician;
 
 import java.text.ParseException;
@@ -11,30 +12,77 @@ import java.util.Date;
 import java.util.Scanner;
 
 public class BandaView {
-    private BandaController bandaController;
-
     Scanner scanner = new Scanner(System.in);
 
-    public BandaView() {
-        this.bandaController = new BandaController();
+    private Coleccionista coleccionista;
+    private BandaController bandaController;
+
+    public BandaView(Coleccionista coleccionista) {
+        this.coleccionista = coleccionista;
+        this.bandaController = new BandaController(coleccionista);
     }
 
 
+    public void showMenuBand(){
+        int opcion;
+        do {
+            System.out.println("Gestión de bandas");
+            System.out.println("----------------------------------");
+            System.out.println("1. Crear una nueva banda");
+            System.out.println("2. Eliminar una banda existente");
+            System.out.println("3. Editar una banda existente");
+            System.out.println("4. Agregar un músico a una banda");
+            System.out.println("5. Eliminar un músico de una banda");
+            System.out.println("6. Mostrar los músicos de una banda");
+            System.out.println("7. Salir");
+            System.out.println("----------------------------------");
+            System.out.print("Elige una opción: ");
+            opcion = scanner.nextInt();
+            scanner.nextLine();
 
-    // Método para mostrar el menú al usuario
-    public void showMenu() {
-        while (true) {
-            System.out.println("Elige una opción:");
+            switch (opcion) {
+                case 1:
+                    createBand();
+                    break;
+                case 2:
+                    deleteBand();
+                    break;
+                case 3:
+                    editBand();
+                    break;
+                case 4:
+                    addMusicianToBand();
+                    break;
+                case 5:
+                    removeMusicianFromBand();
+                    break;
+                case 6:
+                    showMusiciansFromBand();
+                    break;
+                case 7:
+                    System.out.println("Saliendo...");
+                    break;
+                default:
+                    System.out.println("Opción inválida.");
+                    break;
+            }
+        } while (opcion != 7);
+    }
+    public void showMenuMusician(){
+        int opcion;
+        do {
+            System.out.println("Gestión de músicos");
+            System.out.println("----------------------------------");
             System.out.println("1. Crear un nuevo músico");
             System.out.println("2. Eliminar un músico existente");
             System.out.println("3. Editar un músico existente");
-            System.out.println("4. Crear una nueva banda");
-            System.out.println("5. Eliminar una banda existente");
-            System.out.println("6. Editar una banda existente");
-            System.out.println("0. Salir");
-            int choice = scanner.nextInt();
-            scanner.nextLine(); // consume the newline
-            switch (choice) {
+            System.out.println("4. Salir");
+            System.out.println("----------------------------------");
+            System.out.print("Elige una opción: ");
+            opcion = scanner.nextInt();
+            scanner.nextLine();
+
+            switch (opcion) {
                 case 1:
                     createMusician();
                     break;
@@ -45,23 +93,14 @@ public class BandaView {
                     editMusician();
                     break;
                 case 4:
-                    createBand();
+                    System.out.println("Saliendo...");
                     break;
-                case 5:
-                    deleteBand();
-                    break;
-                case 6:
-                    editBand();
-                    break;
-                case 0:
-                    return; // salir del bucle
                 default:
-                    System.out.println("Opción no válida.");
+                    System.out.println("Opción inválida.");
                     break;
             }
-        }
+        } while (opcion != 4);
     }
-
     // Método para crear un nuevo músico
     public void createMusician() {
         System.out.println("Introduce el nombre del músico:");

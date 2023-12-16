@@ -5,6 +5,8 @@ import src.co.edu.uptc.model.Cancion;
 import src.co.edu.uptc.model.Coleccionista;
 import src.co.edu.uptc.model.CollectorAlbum;
 
+import java.util.ArrayList;
+
 
 public class AlbumController {
 
@@ -39,14 +41,22 @@ public class AlbumController {
     }
 
     // Método para buscar un álbum por nombre
+    // Método para buscar un álbum por nombre
     public Album buscarAlbumPorNombre(String nombreBusqueda) {
+        System.out.println("Número total de álbumes: " + coleccionista.getAlbumes().size()); // Imprime el número total de álbumes
         for (CollectorAlbum collectorAlbum : coleccionista.getAlbumes()) {
-            if (collectorAlbum.getAlbum().getName().equalsIgnoreCase(nombreBusqueda)) {
-                return collectorAlbum.getAlbum();
+            Album album = collectorAlbum.getAlbum();
+            System.out.println("Nombre del álbum actual: " + album.getName()); // Imprime el nombre del álbum actual en la iteración
+            if (album.getName().equalsIgnoreCase(nombreBusqueda)) {
+                System.out.println("¡Álbum encontrado!"); // Imprime un mensaje si se encuentra el álbum
+                return album;
             }
         }
-        return null; // Retorna null si no se encuentra el álbum
+        System.out.println("Álbum no encontrado."); // Imprime un mensaje si no se encuentra el álbum
+        return null;
     }
+
+    // Método para agregar una canción a un álbum
 
     public void editarNombreAlbum(String nombreActual, String nuevoNombre) {
         for (CollectorAlbum collectorAlbum : coleccionista.getAlbumes()) {
@@ -97,8 +107,6 @@ public class AlbumController {
     }
 
 
-    // Tus otros métodos aquí...
-
     public void mostrarAlbumes() {
         if (coleccionista.getAlbumes().isEmpty()) {
             System.out.println("No hay álbumes en la colección.");
@@ -115,10 +123,11 @@ public class AlbumController {
         Album album = buscarAlbumPorNombre(nombreAlbum);
         if (album != null) {
             Cancion nuevaCancion = new Cancion(nombreCancion, duracionCancion);
-            album.agregarCancionAlAlbum(nuevaCancion);
+            album.addCancion(nuevaCancion);
             return true;
+        } else {
+            return false;
         }
-        return false;
     }
 
     // Método para eliminar una canción de un álbum específico

@@ -2,16 +2,19 @@ package src.co.edu.uptc.controller;
 
 import src.co.edu.uptc.model.BandDetail;
 import src.co.edu.uptc.model.Banda;
+import src.co.edu.uptc.model.Coleccionista;
 import src.co.edu.uptc.model.Musician;
 
 import java.util.ArrayList;
 import java.util.Date;
 
 public class BandaController {
+    private Coleccionista coleccionista;
     private ArrayList<Banda> bandas;
     private ArrayList<Musician> musicians;
 
-    public BandaController() {
+    public BandaController(Coleccionista coleccionista) {
+        this.coleccionista = coleccionista;
         this.bandas = new ArrayList<>();
         this.musicians = new ArrayList<>();
     }

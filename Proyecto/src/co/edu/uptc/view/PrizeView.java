@@ -1,19 +1,67 @@
 package src.co.edu.uptc.view;
 
 import src.co.edu.uptc.controller.PrizeController;
+import src.co.edu.uptc.model.Coleccionista;
+import src.co.edu.uptc.model.PerformerDetail;
 import src.co.edu.uptc.model.PerformerPrize;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class PrizeView {
-    private PrizeController prizeController;
-    private Scanner sc;
+    Scanner sc = new Scanner(System.in);
+    PrizeController prizeController;
+    Coleccionista coleccionista;
+    ArrayList<PerformerDetail> listaInterpretes; // Asegúrate de inicializar esto
 
-    public PrizeView(PrizeController prizeController) {
-        this.prizeController = prizeController;
-        this.sc = new Scanner(System.in);
+    public PrizeView(Coleccionista coleccionista, ArrayList<PerformerDetail> listaInterpretes) {
+        this.coleccionista = coleccionista;
+        this.listaInterpretes = listaInterpretes;
+        this.prizeController = new PrizeController(coleccionista, listaInterpretes);
     }
 
+    public void showMenu() {
+        int opcion;
+        do {
+            System.out.println("1. Agregar premio a álbum");
+            System.out.println("2. Eliminar premio de álbum");
+            System.out.println("3. Mostrar premios de álbum");
+            System.out.println("4. Agregar premio a intérprete");
+            System.out.println("5. Eliminar premio de intérprete");
+            System.out.println("6. Mostrar premios de intérprete");
+            System.out.println("7. Salir");
+            System.out.print("Elige una opción: ");
+            opcion = sc.nextInt();
+            sc.nextLine();
+
+            switch (opcion) {
+                case 1:
+                    agregarPremioAAlbumVista();
+                    break;
+                case 2:
+                    eliminarPremioDeAlbumVista();
+                    break;
+                case 3:
+                    mostrarPremiosDeAlbumVista();
+                    break;
+                case 4:
+                    agregarPremioAInterpreteVista();
+                    break;
+                case 5:
+                    eliminarPremioDeInterpreteVista();
+                    break;
+                case 6:
+                    mostrarPremiosDeInterpreteVista();
+                    break;
+                case 7:
+                    System.out.println("Saliendo...");
+                    break;
+                default:
+                    System.out.println("Opción inválida.");
+                    break;
+            }
+        } while (opcion != 7);
+    }
     // Método para agregar un premio a un álbum
     public void agregarPremioAAlbumVista() {
         System.out.println("Ingrese el nombre del álbum:");

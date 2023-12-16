@@ -15,7 +15,7 @@ public class Coleccionista {
         this.telefono = telefono;
         this.email = email;
         this.clave = clave;
-        this.albumes = albumes;
+        this.albumes = new ArrayList<>();
     }
 
     public void setNombre(String nombre) {
@@ -56,6 +56,10 @@ public class Coleccionista {
     }
     public void addAlbum(CollectorAlbum album){
         this.albumes.add(album);
+    }
+    public String toString() {
+        return "Coleccionista{" +
+                "nombre='" + nombre + "";
     }
 
 
