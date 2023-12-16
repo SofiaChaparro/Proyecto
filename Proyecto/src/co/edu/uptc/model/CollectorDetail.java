@@ -27,10 +27,10 @@ public class CollectorDetail {
         } else {
             for (Coleccionista coleccionista : coleccionistas) {
                 System.out.println("Álbumes de " + coleccionista.getNombre() + ":");
-                if (coleccionista.getAlbumesColeccionista().isEmpty()) {
+                if (coleccionista.getAlbumes().isEmpty()) {
                     System.out.println("No hay álbumes en la colección de " + coleccionista.getNombre() + ".");
                 } else {
-                    for (CollectorAlbum album : coleccionista.getAlbumesColeccionista()) {
+                    for (CollectorAlbum album : coleccionista.getAlbumes()) {
                         System.out.println(album);
                     }
                 }

@@ -1,13 +1,18 @@
 package src.co.edu.uptc.view;
-
+import src.co.edu.uptc.model.CollectorDetail;
 import src.co.edu.uptc.controller.CollectorController;
 import src.co.edu.uptc.model.Coleccionista;
+import src.co.edu.uptc.model.CollectorAlbum;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class CollectorView {
     Scanner sc = new Scanner(System.in);
-    CollectorController collectorController = new CollectorController();
+    CollectorDetail collectorDetail = new CollectorDetail();
+    Coleccionista coleccionista = new Coleccionista("nombre", "telefono", "email", "clave");
+    CollectorController collectorController = new CollectorController(coleccionista, collectorDetail);
+
 
     public void registrarColeccionista() {
 
@@ -25,11 +30,8 @@ public class CollectorView {
         System.out.print("Clave: ");
         String clave = sc.nextLine();
 
-        Coleccionista coleccionista = new Coleccionista();
-        coleccionista.setNombre(nombre);
-        coleccionista.setTelefono(telefono);
-        coleccionista.setEmail(email);
-        coleccionista.setClave(clave);
+        // Crear un nuevo Coleccionista con los datos ingresados
+        Coleccionista coleccionista = new Coleccionista(nombre, telefono, email, clave);
 
         boolean isRegistered = collectorController.registrarColeccionista(coleccionista);
 
@@ -59,4 +61,16 @@ public class CollectorView {
             return false;
         }
     }
+    public void mostrarAlbumes() {
+        ArrayList<CollectorAlbum> albumes = coleccionista.getAlbumes();
+        if (albumes.isEmpty()) {
+            System.out.println("El coleccionista no tiene álbumes.");
+        } else {
+            System.out.println("Álbumes del coleccionista " + coleccionista.getNombre() + ":");
+            for (CollectorAlbum album : albumes) {
+                System.out.println(album);
+            }
+        }
+    }
+
 }
